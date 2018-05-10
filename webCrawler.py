@@ -32,9 +32,9 @@ class webcrawler:
 			for link in range(self.depth):
 				self.base_url=self.base_url+self.link_list[0]
 				self.parsing_data()
-			return self.image_dict
+			return True,self.image_dict
 		else:
-			return "No Links Available"
+			return False,self.image_dict
 
 ob=webcrawler(r'https://yourstory.com/',4)
 print ob.bfs_fetch()
